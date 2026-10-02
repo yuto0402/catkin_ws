@@ -1,0 +1,8 @@
+prefix=/catkin_ws/devel
+
+Name: robot1_work_yamada
+Description: Description of robot1_work_yamada
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
