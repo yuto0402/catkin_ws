@@ -56,3 +56,14 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/robot1_task_yamada" TYPE PROGRAM FILES "/catkin_ws/build/robot1_task_yamada/catkin_generated/installspace/odom_listener.py")
 endif()
 
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/robot1_task_yamada" TYPE PROGRAM FILES "/catkin_ws/build/robot1_task_yamada/catkin_generated/installspace/auto_move.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot1_task_yamada" TYPE DIRECTORY FILES
+    "/catkin_ws/src/robot1_task_yamada/launch"
+    "/catkin_ws/src/robot1_task_yamada/worlds"
+    )
+endif()
+

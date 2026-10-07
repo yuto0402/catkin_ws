@@ -9,6 +9,7 @@ project(robot1_task_yamada)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   nav_msgs
+  geometry_msgs
   rospy
   std_msgs
 )
@@ -103,7 +104,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-  CATKIN_DEPENDS nav_msgs rospy std_msgs
+  CATKIN_DEPENDS nav_msgs geometry_msgs rospy std_msgs
 #  INCLUDE_DIRS include
 #  LIBRARIES robot1_task_yamada
 #  CATKIN_DEPENDS rospy std_msgs
@@ -158,6 +159,7 @@ include_directories(
 # all install targets should use catkin DESTINATION variables
 catkin_install_python(PROGRAMS
   src/odom_listener.py
+  src/auto_move.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 install(DIRECTORY launch worlds

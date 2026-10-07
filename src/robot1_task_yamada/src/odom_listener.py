@@ -11,7 +11,7 @@ def callback(message):
 def main():
     rospy.init_node("odom_listener")
     rospy.Subscriber("/odom", Odometry, callback)
-    rospy.spin()  # メッセージの受信を続けます。
+    rospy.spin()
 
 
 if __name__ == "__main__":

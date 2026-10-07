@@ -5,4 +5,4 @@ Description: Description of robot1_task_yamada
 Version: 0.0.0
 Cflags: 
 Libs: -L${prefix}/lib 
-Requires: nav_msgs rospy std_msgs
+Requires: nav_msgs geometry_msgs rospy std_msgs
