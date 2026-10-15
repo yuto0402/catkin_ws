@@ -1,8 +1,0 @@
-prefix=/opt/ros/noetic
-
-Name: rosparam
-Description: Description of rosparam
-Version: 1.17.4
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

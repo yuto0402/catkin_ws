@@ -1,8 +1,0 @@
-prefix=/opt/ros/noetic
-
-Name: rqt_nav_view
-Description: Description of rqt_nav_view
-Version: 0.5.8
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

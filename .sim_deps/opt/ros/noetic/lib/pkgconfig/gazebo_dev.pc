@@ -1,8 +1,0 @@
-prefix=/opt/ros/noetic
-
-Name: gazebo_dev
-Description: Description of gazebo_dev
-Version: 2.9.3
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

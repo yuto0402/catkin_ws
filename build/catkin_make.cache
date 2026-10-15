@@ -1,2 +1,0 @@
-robot1_task_yamada:robot1_work_yamada
--DCATKIN_DEVEL_PREFIX=/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/catkin_ws/install -G Unix Makefiles

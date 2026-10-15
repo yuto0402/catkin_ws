@@ -1,8 +1,0 @@
-prefix=/opt/ros/noetic
-
-Name: rosnode
-Description: Description of rosnode
-Version: 1.17.4
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

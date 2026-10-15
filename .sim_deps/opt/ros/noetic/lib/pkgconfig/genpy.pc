@@ -1,8 +1,0 @@
-prefix=/opt/ros/noetic
-
-Name: genpy
-Description: Description of genpy
-Version: 0.6.18
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: genmsg

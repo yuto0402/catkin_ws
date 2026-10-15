@@ -1,8 +1,0 @@
-prefix=/catkin_ws/devel
-
-Name: robot1_task_yamada
-Description: Description of robot1_task_yamada
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: nav_msgs geometry_msgs rospy std_msgs

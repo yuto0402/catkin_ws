@@ -1,0 +1,38 @@
+# Catkin build outputs
+/build/
+/devel/
+/install/
+/build_isolated/
+/devel_isolated/
+/install_isolated/
+/.catkin_tools/
+/logs/
+
+# Local ROS runtime and downloaded dependencies
+/.ros/
+/.ros-local/
+/.sim_deps/*
+!/.sim_deps/env.bash
+
+# Machine-specific editor and agent settings
+/.vscode/
+/.idea/
+/.agents/
+/.codex/
+/.aws/
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# Temporary files and local secrets
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example

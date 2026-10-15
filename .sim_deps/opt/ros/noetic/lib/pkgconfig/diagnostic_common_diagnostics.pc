@@ -1,8 +1,0 @@
-prefix=/opt/ros/noetic
-
-Name: diagnostic_common_diagnostics
-Description: Description of diagnostic_common_diagnostics
-Version: 1.12.1
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
