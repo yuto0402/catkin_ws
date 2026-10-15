@@ -1,0 +1,27 @@
+[rospy.client][INFO] 2026-10-02 13:57:34,121: init_node, name[/road_motion_check_29974_1790917054103], pid[29974]
+[xmlrpc][INFO] 2026-10-02 13:57:34,121: XML-RPC server binding to 127.0.0.1:0
+[xmlrpc][INFO] 2026-10-02 13:57:34,121: Started XML-RPC server [http://127.0.0.1:37659/]
+[rospy.init][INFO] 2026-10-02 13:57:34,121: ROS Slave URI: [http://127.0.0.1:37659/]
+[rospy.impl.masterslave][INFO] 2026-10-02 13:57:34,121: _ready: http://127.0.0.1:37659/
+[rospy.registration][INFO] 2026-10-02 13:57:34,122: Registering with master node http://localhost:11311/
+[xmlrpc][INFO] 2026-10-02 13:57:34,122: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2026-10-02 13:57:34,222: registered with master
+[rospy.rosout][INFO] 2026-10-02 13:57:34,222: initializing /rosout core topic
+[rospy.rosout][INFO] 2026-10-02 13:57:34,237: connected to core topic /rosout
+[rospy.simtime][INFO] 2026-10-02 13:57:34,245: initializing /clock core topic
+[rospy.simtime][INFO] 2026-10-02 13:57:34,252: connected to core topic /clock
+[rospy.internal][INFO] 2026-10-02 13:57:34,254: topic[/clock] adding connection to [http://127.0.0.1:34611/], count 0
+[rospy.internal][INFO] 2026-10-02 13:57:34,263: topic[/odom] adding connection to [http://127.0.0.1:34611/], count 0
+[rospy.internal][INFO] 2026-10-02 13:57:34,293: topic impl's ref count is zero, deleting topic /odom...
+[rospy.internal][INFO] 2026-10-02 13:57:34,294: topic[/odom] removing connection to http://127.0.0.1:34611/
+[rospy.internal][INFO] 2026-10-02 13:57:34,462: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.internal][INFO] 2026-10-02 13:57:34,466: topic[/cmd_vel] adding connection to [/gazebo], count 0
+[rospy.internal][INFO] 2026-10-02 13:57:37,285: topic[/odom] adding connection to [http://127.0.0.1:34611/], count 0
+[rospy.internal][INFO] 2026-10-02 13:57:37,314: topic impl's ref count is zero, deleting topic /odom...
+[rospy.internal][INFO] 2026-10-02 13:57:37,315: topic[/odom] removing connection to http://127.0.0.1:34611/
+[rospy.internal][INFO] 2026-10-02 13:57:37,315: topic[/odom] removing connection to http://127.0.0.1:34611/
+[rospy.core][INFO] 2026-10-02 13:57:37,316: signal_shutdown [atexit]
+[rospy.internal][INFO] 2026-10-02 13:57:37,318: topic[/rosout] removing connection to /rosout
+[rospy.internal][INFO] 2026-10-02 13:57:37,318: topic[/cmd_vel] removing connection to /gazebo
+[rospy.internal][INFO] 2026-10-02 13:57:37,318: topic[/clock] removing connection to http://127.0.0.1:34611/
+[rospy.impl.masterslave][INFO] 2026-10-02 13:57:37,318: atexit

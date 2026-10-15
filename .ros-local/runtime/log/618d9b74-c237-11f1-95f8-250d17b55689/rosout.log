@@ -1,0 +1,5 @@
+
+
+1791367854.459826002  Node Startup
+1791367857.180250644 INFO /odom_listener [odom_listener.py:8(callback)] [topics: /odom, /rosout] x = 0.0000 m, y = 0.0000 m
+1791367857.680479764 INFO /odom_listener [odom_listener.py:8(callback)] [topics: /odom, /rosout] x = 1.2500 m, y = -0.5000 m

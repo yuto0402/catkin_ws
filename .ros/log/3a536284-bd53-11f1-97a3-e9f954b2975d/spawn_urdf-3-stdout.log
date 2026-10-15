@@ -1,0 +1,5 @@
+[INFO] [1790917087.437456, 0.000000]: Loading model XML from ros parameter robot_description
+[INFO] [1790917087.441438, 0.000000]: Waiting for service /gazebo/spawn_urdf_model
+[INFO] [1790917088.048128, 0.000000]: wait_for_service(/gazebo/spawn_urdf_model): finally were able to contact [rosrpc://127.0.0.1:60085]
+[INFO] [1790917088.049827, 0.000000]: Calling service /gazebo/spawn_urdf_model
+[INFO] [1790917089.853346, 0.001000]: Spawn status: SpawnModel: Successfully spawned entity

@@ -1,0 +1,53 @@
+[rosmaster.main][INFO] 2026-10-07 19:10:54,362: initialization complete, waiting for shutdown
+[rosmaster.main][INFO] 2026-10-07 19:10:54,362: Starting ROS Master Node
+[xmlrpc][INFO] 2026-10-07 19:10:54,387: XML-RPC server binding to 0.0.0.0:11321
+[xmlrpc][INFO] 2026-10-07 19:10:54,387: Started XML-RPC server [http://roboprog:11321/]
+[rosmaster.master][INFO] 2026-10-07 19:10:54,387: Master initialized: port[11321], uri[http://roboprog:11321/]
+[xmlrpc][INFO] 2026-10-07 19:10:54,387: xml rpc node: starting XML-RPC server
+[rosmaster.master][INFO] 2026-10-07 19:10:54,438: +PARAM [/run_id] by /roslaunch
+[rosmaster.master][INFO] 2026-10-07 19:10:54,438: +PARAM [/roslaunch/uris/host_roboprog__44975] by /roslaunch
+[rosmaster.master][INFO] 2026-10-07 19:10:54,456: +PARAM [/rosversion] by /roslaunch
+[rosmaster.master][INFO] 2026-10-07 19:10:54,456: +PARAM [/rosdistro] by /roslaunch
+[rosmaster.master][INFO] 2026-10-07 19:10:54,459: +SERVICE [/rosout/get_loggers] /rosout http://roboprog:33719/
+[rosmaster.master][INFO] 2026-10-07 19:10:54,459: +SERVICE [/rosout/set_logger_level] /rosout http://roboprog:33719/
+[rosmaster.master][INFO] 2026-10-07 19:10:54,459: +PUB [/rosout_agg] /rosout http://roboprog:33719/
+[rosmaster.master][INFO] 2026-10-07 19:10:54,461: +SUB [/rosout] /rosout http://roboprog:33719/
+[rosmaster.master][INFO] 2026-10-07 19:10:54,706: +PUB [/rosout] /odom_listener http://roboprog:35833/
+[rosmaster.master][INFO] 2026-10-07 19:10:54,712: +SERVICE [/odom_listener/get_loggers] /odom_listener http://roboprog:35833/
+[rosmaster.master][INFO] 2026-10-07 19:10:54,713: +SERVICE [/odom_listener/set_logger_level] /odom_listener http://roboprog:35833/
+[rosmaster.master][INFO] 2026-10-07 19:10:54,715: +SUB [/odom] /odom_listener http://roboprog:35833/
+[rosmaster.master][INFO] 2026-10-07 19:10:54,771: publisherUpdate[/rosout] -> http://roboprog:33719/ ['http://roboprog:35833/']
+[rosmaster.master][INFO] 2026-10-07 19:10:54,775: publisherUpdate[/rosout] -> http://roboprog:33719/ ['http://roboprog:35833/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2026-10-07 19:10:57,067: +PUB [/rosout] /odom_test_5124_1791367856937 http://roboprog:44151/
+[rosmaster.master][INFO] 2026-10-07 19:10:57,071: +SERVICE [/odom_test_5124_1791367856937/get_loggers] /odom_test_5124_1791367856937 http://roboprog:44151/
+[rosmaster.master][INFO] 2026-10-07 19:10:57,073: +SERVICE [/odom_test_5124_1791367856937/set_logger_level] /odom_test_5124_1791367856937 http://roboprog:44151/
+[rosmaster.master][INFO] 2026-10-07 19:10:57,074: +PUB [/odom] /odom_test_5124_1791367856937 http://roboprog:44151/
+[rosmaster.master][INFO] 2026-10-07 19:10:57,083: publisherUpdate[/rosout] -> http://roboprog:33719/ ['http://roboprog:35833/', 'http://roboprog:44151/']
+[rosmaster.master][INFO] 2026-10-07 19:10:57,085: publisherUpdate[/rosout] -> http://roboprog:33719/ ['http://roboprog:35833/', 'http://roboprog:44151/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2026-10-07 19:10:57,085: publisherUpdate[/odom] -> http://roboprog:35833/ ['http://roboprog:44151/']
+[rosmaster.master][INFO] 2026-10-07 19:10:57,088: publisherUpdate[/odom] -> http://roboprog:35833/ ['http://roboprog:44151/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2026-10-07 19:10:57,178: +CACHEDPARAM [/rosout_disable_topics_generation] by /odom_listener
+[rosmaster.master][INFO] 2026-10-07 19:10:57,181: +CACHEDPARAM [/rosout/omit_topics] by /rosout
+[rosmaster.master][INFO] 2026-10-07 19:10:57,679: +CACHEDPARAM [/rosout_disable_topics_generation] by /odom_listener
+[rosmaster.master][INFO] 2026-10-07 19:10:58,180: -PUB [/rosout] /odom_test_5124_1791367856937 http://roboprog:44151/
+[rosmaster.master][INFO] 2026-10-07 19:10:58,181: -PUB [/odom] /odom_test_5124_1791367856937 http://roboprog:44151/
+[rosmaster.master][INFO] 2026-10-07 19:10:58,181: -SERVICE [/odom_test_5124_1791367856937/get_loggers] /odom_test_5124_1791367856937 rosrpc://roboprog:39123
+[rosmaster.master][INFO] 2026-10-07 19:10:58,181: -SERVICE [/odom_test_5124_1791367856937/set_logger_level] /odom_test_5124_1791367856937 rosrpc://roboprog:39123
+[rosmaster.master][INFO] 2026-10-07 19:10:58,190: publisherUpdate[/rosout] -> http://roboprog:33719/ ['http://roboprog:35833/']
+[rosmaster.master][INFO] 2026-10-07 19:10:58,191: publisherUpdate[/odom] -> http://roboprog:35833/ []
+[rosmaster.master][INFO] 2026-10-07 19:10:58,193: publisherUpdate[/rosout] -> http://roboprog:33719/ ['http://roboprog:35833/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2026-10-07 19:10:58,195: publisherUpdate[/odom] -> http://roboprog:35833/ []: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2026-10-07 19:10:58,837: -SUB [/odom] /odom_listener http://roboprog:35833/
+[rosmaster.master][INFO] 2026-10-07 19:10:58,837: -PUB [/rosout] /odom_listener http://roboprog:35833/
+[rosmaster.master][INFO] 2026-10-07 19:10:58,837: -SERVICE [/odom_listener/get_loggers] /odom_listener rosrpc://roboprog:45443
+[rosmaster.master][INFO] 2026-10-07 19:10:58,837: -SERVICE [/odom_listener/set_logger_level] /odom_listener rosrpc://roboprog:45443
+[rosmaster.master][INFO] 2026-10-07 19:10:58,897: publisherUpdate[/rosout] -> http://roboprog:33719/ []
+[rosmaster.master][INFO] 2026-10-07 19:10:58,897: publisherUpdate[/rosout] -> http://roboprog:33719/ []: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2026-10-07 19:10:59,599: -PUB [/rosout_agg] /rosout http://roboprog:33719/
+[rosmaster.master][INFO] 2026-10-07 19:10:59,600: -SUB [/rosout] /rosout http://roboprog:33719/
+[rosmaster.master][INFO] 2026-10-07 19:10:59,600: -SERVICE [/rosout/get_loggers] /rosout rosrpc://roboprog:49059
+[rosmaster.master][INFO] 2026-10-07 19:10:59,601: -SERVICE [/rosout/set_logger_level] /rosout rosrpc://roboprog:49059
+[rosmaster.master][INFO] 2026-10-07 19:10:59,601: -CACHEDPARAM [/rosout/omit_topics] by /rosout
+[rosmaster.main][INFO] 2026-10-07 19:10:59,639: keyboard interrupt, will exit
+[rosmaster.main][INFO] 2026-10-07 19:10:59,639: stopping master...
+[rospy.core][INFO] 2026-10-07 19:10:59,639: signal_shutdown [atexit]

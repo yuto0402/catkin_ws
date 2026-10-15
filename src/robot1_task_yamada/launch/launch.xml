@@ -1,10 +1,5 @@
 <launch>
-  <arg name="world_name" default="/usr/share/gazebo-11/worlds/shapes.world"/>
   <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_empty_world.launch">
-    <arg name="model" value="burger"/>
-    <arg name="x_pos" value="2.0"/>
-    <arg name="y_pos" value="0.0"/>
-    <arg name="world_name" value="$(arg world_name)"/>
   </include>
   <node pkg="robot1_task_yamada" type="odom_listener.py"
         name="odom_listener" output="screen"/>

@@ -1,0 +1,27 @@
+[rosmaster.main][INFO] 2026-10-07 19:10:26,338: initialization complete, waiting for shutdown
+[rosmaster.main][INFO] 2026-10-07 19:10:26,338: Starting ROS Master Node
+[xmlrpc][INFO] 2026-10-07 19:10:26,362: XML-RPC server binding to 0.0.0.0:11321
+[xmlrpc][INFO] 2026-10-07 19:10:26,363: Started XML-RPC server [http://roboprog:11321/]
+[rosmaster.master][INFO] 2026-10-07 19:10:26,363: Master initialized: port[11321], uri[http://roboprog:11321/]
+[xmlrpc][INFO] 2026-10-07 19:10:26,363: xml rpc node: starting XML-RPC server
+[rosmaster.master][INFO] 2026-10-07 19:10:26,416: +PARAM [/run_id] by /roslaunch
+[rosmaster.master][INFO] 2026-10-07 19:10:26,417: +PARAM [/roslaunch/uris/host_roboprog__44637] by /roslaunch
+[rosmaster.master][INFO] 2026-10-07 19:10:26,440: +PARAM [/rosversion] by /roslaunch
+[rosmaster.master][INFO] 2026-10-07 19:10:26,440: +PARAM [/rosdistro] by /roslaunch
+[rosmaster.master][INFO] 2026-10-07 19:10:26,443: +SERVICE [/rosout/get_loggers] /rosout http://roboprog:42383/
+[rosmaster.master][INFO] 2026-10-07 19:10:26,443: +SERVICE [/rosout/set_logger_level] /rosout http://roboprog:42383/
+[rosmaster.master][INFO] 2026-10-07 19:10:26,443: +PUB [/rosout_agg] /rosout http://roboprog:42383/
+[rosmaster.master][INFO] 2026-10-07 19:10:26,444: +SUB [/rosout] /rosout http://roboprog:42383/
+[rosmaster.master][INFO] 2026-10-07 19:10:29,058: +PUB [/rosout] /odom_test_5003_1791367828929 http://roboprog:36613/
+[rosmaster.master][INFO] 2026-10-07 19:10:29,061: publisherUpdate[/rosout] -> http://roboprog:42383/ ['http://roboprog:36613/']
+[rosmaster.master][INFO] 2026-10-07 19:10:29,065: +SERVICE [/odom_test_5003_1791367828929/get_loggers] /odom_test_5003_1791367828929 http://roboprog:36613/
+[rosmaster.master][INFO] 2026-10-07 19:10:29,066: publisherUpdate[/rosout] -> http://roboprog:42383/ ['http://roboprog:36613/']: sec=0.01, result=[1, '', 0]
+[rosmaster.master][INFO] 2026-10-07 19:10:29,067: +SERVICE [/odom_test_5003_1791367828929/set_logger_level] /odom_test_5003_1791367828929 http://roboprog:36613/
+[rosmaster.master][INFO] 2026-10-07 19:10:29,068: +PUB [/odom] /odom_test_5003_1791367828929 http://roboprog:36613/
+[rosmaster.master][INFO] 2026-10-07 19:10:39,293: -PUB [/rosout_agg] /rosout http://roboprog:42383/
+[rosmaster.master][INFO] 2026-10-07 19:10:39,294: -SUB [/rosout] /rosout http://roboprog:42383/
+[rosmaster.master][INFO] 2026-10-07 19:10:39,294: -SERVICE [/rosout/get_loggers] /rosout rosrpc://roboprog:38389
+[rosmaster.master][INFO] 2026-10-07 19:10:39,294: -SERVICE [/rosout/set_logger_level] /rosout rosrpc://roboprog:38389
+[rosmaster.main][INFO] 2026-10-07 19:10:39,361: keyboard interrupt, will exit
+[rosmaster.main][INFO] 2026-10-07 19:10:39,361: stopping master...
+[rospy.core][INFO] 2026-10-07 19:10:39,362: signal_shutdown [atexit]

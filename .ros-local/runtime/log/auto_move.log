@@ -1,0 +1,75 @@
+[rospy.client][INFO] 2026-10-07 19:55:55,834: init_node, name[/auto_move], pid[26203]
+[xmlrpc][INFO] 2026-10-07 19:55:55,834: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2026-10-07 19:55:55,834: Started XML-RPC server [http://roboprog:34393/]
+[rospy.init][INFO] 2026-10-07 19:55:55,834: ROS Slave URI: [http://roboprog:34393/]
+[rospy.impl.masterslave][INFO] 2026-10-07 19:55:55,834: _ready: http://roboprog:34393/
+[rospy.registration][INFO] 2026-10-07 19:55:55,835: Registering with master node http://localhost:11311/
+[xmlrpc][INFO] 2026-10-07 19:55:55,835: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2026-10-07 19:55:55,935: registered with master
+[rospy.rosout][INFO] 2026-10-07 19:55:55,935: initializing /rosout core topic
+[rospy.rosout][INFO] 2026-10-07 19:55:55,938: connected to core topic /rosout
+[rospy.simtime][INFO] 2026-10-07 19:55:55,939: initializing /clock core topic
+[rospy.simtime][INFO] 2026-10-07 19:55:55,942: connected to core topic /clock
+[rospy.internal][INFO] 2026-10-07 19:55:55,946: topic[/clock] adding connection to [http://roboprog:44795/], count 0
+[rosout][INFO] 2026-10-07 19:55:55,947: ロボットの接続待ち
+[rospy.internal][INFO] 2026-10-07 19:55:55,987: topic[/cmd_vel] adding connection to [/auto_move_verification_26178_1791370555431], count 0
+[rosout][INFO] 2026-10-07 19:55:56,049: 3秒前進（0.1 m/s）
+[rospy.internal][INFO] 2026-10-07 19:55:56,078: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.internal][INFO] 2026-10-07 19:55:56,179: topic[/cmd_vel] adding connection to [/gazebo], count 1
+[rosout][INFO] 2026-10-07 19:55:58,955: 3秒左旋回（0.3 rad/s）
+[rosout][INFO] 2026-10-07 19:56:01,960: 2秒前進（0.1 m/s）
+[rosout][INFO] 2026-10-07 19:56:03,966: 停止
+[rospy.core][INFO] 2026-10-07 19:56:04,467: signal_shutdown [atexit]
+[rospy.internal][INFO] 2026-10-07 19:56:04,469: topic[/rosout] removing connection to /rosout
+[rospy.internal][INFO] 2026-10-07 19:56:04,470: topic[/cmd_vel] removing connection to /auto_move_verification_26178_1791370555431
+[rospy.internal][INFO] 2026-10-07 19:56:04,470: topic[/cmd_vel] removing connection to /gazebo
+[rospy.internal][INFO] 2026-10-07 19:56:04,470: topic[/clock] removing connection to http://roboprog:44795/
+[rospy.impl.masterslave][INFO] 2026-10-07 19:56:04,470: atexit
+[rospy.client][INFO] 2026-10-07 19:58:28,563: init_node, name[/auto_move], pid[27434]
+[xmlrpc][INFO] 2026-10-07 19:58:28,563: XML-RPC server binding to 127.0.0.1:0
+[xmlrpc][INFO] 2026-10-07 19:58:28,564: Started XML-RPC server [http://127.0.0.1:42629/]
+[rospy.init][INFO] 2026-10-07 19:58:28,564: ROS Slave URI: [http://127.0.0.1:42629/]
+[rospy.impl.masterslave][INFO] 2026-10-07 19:58:28,564: _ready: http://127.0.0.1:42629/
+[rospy.registration][INFO] 2026-10-07 19:58:28,564: Registering with master node http://localhost:11311/
+[xmlrpc][INFO] 2026-10-07 19:58:28,564: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2026-10-07 19:58:28,664: registered with master
+[rospy.rosout][INFO] 2026-10-07 19:58:28,664: initializing /rosout core topic
+[rospy.rosout][INFO] 2026-10-07 19:58:28,668: connected to core topic /rosout
+[rospy.simtime][INFO] 2026-10-07 19:58:28,669: initializing /clock core topic
+[rospy.simtime][INFO] 2026-10-07 19:58:28,670: connected to core topic /clock
+[rospy.internal][INFO] 2026-10-07 19:58:28,672: topic[/clock] adding connection to [http://roboprog:44795/], count 0
+[rospy.internal][INFO] 2026-10-07 19:58:28,934: topic[/cmd_vel] adding connection to [/gazebo], count 0
+[rospy.internal][INFO] 2026-10-07 19:58:28,935: topic[/rosout] adding connection to [/rosout], count 0
+[rosout][INFO] 2026-10-07 19:58:28,978: 3秒前進
+[rosout][INFO] 2026-10-07 19:58:31,895: 3秒左旋回
+[rosout][INFO] 2026-10-07 19:58:34,907: 2秒前進
+[rosout][INFO] 2026-10-07 19:58:36,913: 停止
+[rospy.core][INFO] 2026-10-07 19:58:36,916: signal_shutdown [atexit]
+[rospy.internal][INFO] 2026-10-07 19:58:36,921: topic[/rosout] removing connection to /rosout
+[rospy.internal][INFO] 2026-10-07 19:58:36,921: topic[/cmd_vel] removing connection to /gazebo
+[rospy.internal][INFO] 2026-10-07 19:58:36,922: topic[/clock] removing connection to http://roboprog:44795/
+[rospy.impl.masterslave][INFO] 2026-10-07 19:58:36,922: atexit
+[rospy.client][INFO] 2026-10-07 19:58:57,672: init_node, name[/auto_move], pid[27761]
+[xmlrpc][INFO] 2026-10-07 19:58:57,672: XML-RPC server binding to 127.0.0.1:0
+[xmlrpc][INFO] 2026-10-07 19:58:57,673: Started XML-RPC server [http://127.0.0.1:37323/]
+[rospy.init][INFO] 2026-10-07 19:58:57,673: ROS Slave URI: [http://127.0.0.1:37323/]
+[rospy.impl.masterslave][INFO] 2026-10-07 19:58:57,673: _ready: http://127.0.0.1:37323/
+[rospy.registration][INFO] 2026-10-07 19:58:57,674: Registering with master node http://localhost:11311/
+[xmlrpc][INFO] 2026-10-07 19:58:57,674: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2026-10-07 19:58:57,774: registered with master
+[rospy.rosout][INFO] 2026-10-07 19:58:57,774: initializing /rosout core topic
+[rospy.rosout][INFO] 2026-10-07 19:58:57,777: connected to core topic /rosout
+[rospy.simtime][INFO] 2026-10-07 19:58:57,778: initializing /clock core topic
+[rospy.simtime][INFO] 2026-10-07 19:58:57,781: connected to core topic /clock
+[rospy.internal][INFO] 2026-10-07 19:58:57,782: topic[/clock] adding connection to [http://roboprog:44795/], count 0
+[rospy.internal][INFO] 2026-10-07 19:58:57,993: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.internal][INFO] 2026-10-07 19:58:57,995: topic[/cmd_vel] adding connection to [/gazebo], count 0
+[rosout][INFO] 2026-10-07 19:58:58,089: 3秒前進
+[rosout][INFO] 2026-10-07 19:59:01,012: 3秒左旋回
+[rosout][INFO] 2026-10-07 19:59:04,031: 2秒前進
+[rosout][INFO] 2026-10-07 19:59:06,050: 停止
+[rospy.core][INFO] 2026-10-07 19:59:06,052: signal_shutdown [atexit]
+[rospy.internal][INFO] 2026-10-07 19:59:06,053: topic[/rosout] removing connection to /rosout
+[rospy.internal][INFO] 2026-10-07 19:59:06,053: topic[/cmd_vel] removing connection to /gazebo
+[rospy.internal][INFO] 2026-10-07 19:59:06,054: topic[/clock] removing connection to http://roboprog:44795/
+[rospy.impl.masterslave][INFO] 2026-10-07 19:59:06,054: atexit

@@ -10,7 +10,7 @@ def callback(message):
 
 def main():
     rospy.init_node("odom_listener")
-    rospy.Subscriber("/odom", Odometry, callback)
+    rospy.Subscriber("/odom", Odometry, callback, queue_size=10)
     rospy.spin()
 
 
