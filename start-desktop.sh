@@ -28,4 +28,5 @@ if ! grep -q '<arg name="world_name" default=' "$tb3_launch"; then
   sed -i '/<launch>/a\  <arg name="world_name" default="$(find turtlebot3_gazebo)/worlds/empty.world"/>' "$tb3_launch"
   sed -i 's|value="$(find turtlebot3_gazebo)/worlds/empty.world"|value="$(arg world_name)"|' "$tb3_launch"
 fi
-exec roslaunch robot1_task_yamada launch.xml
+# Gazebo はターミナルから必要な launch ファイルを一度だけ起動します。
+exec roscore
