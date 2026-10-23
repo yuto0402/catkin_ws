@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import math
-import threading
+import time
 
 import rospy
 import tf2_geometry_msgs
@@ -12,138 +12,102 @@ from std_srvs.srv import Trigger, TriggerResponse
 from tf.transformations import euler_from_quaternion
 
 goal = None
-robot_pose = None
-robot_velocity = None
-active_request = None
-request_lock = threading.Lock()
-
-K_ANGLE = 1.0
-K_DISTANCE = 0.5
-MAX_LINEAR_SPEED = 0.25
-MAX_ANGULAR_SPEED = 0.5
-STOP_DISTANCE = 0.3
-GOAL_TOLERANCE = 0.02
-SCAN_TIMEOUT = 1.0
-STOP_SETTLE_TIME = 0.3
+robot_odom = None
+moving = False
+response = None
 
 
-def scan_callback(message, tf_buffer):
+def scan_callback(scan, tf_buffer):
     global goal
-    nearest = min(
-        ((distance, i) for i, distance in enumerate(message.ranges)
-         if math.isfinite(distance)
-         and message.range_min <= distance <= message.range_max),
-        default=None,
-    )
-    if nearest is None:
+    closest = math.inf
+
+    for i, distance in enumerate(scan.ranges):
+        if not math.isfinite(distance) or distance <= 0.0:
+            continue
+        if distance < scan.range_min or distance > scan.range_max:
+            continue
+        if distance < closest:
+            closest = distance
+            angle = scan.angle_min + i * scan.angle_increment
+
+    if closest == math.inf:
         goal = None
         return
 
-    distance, index = nearest
-    angle = message.angle_min + index * message.angle_increment
     point = PointStamped()
-    point.header = message.header
-    point.point.x = distance * math.cos(angle)
-    point.point.y = distance * math.sin(angle)
-
+    point.header = scan.header
+    point.point.x = closest * math.cos(angle)
+    point.point.y = closest * math.sin(angle)
     try:
-        transform = tf_buffer.lookup_transform(
-            "odom", point.header.frame_id, point.header.stamp,
-            rospy.Duration(0.1),
-        )
-        point_odom = tf2_geometry_msgs.do_transform_point(point, transform)
-    except (tf2_ros.LookupException, tf2_ros.ConnectivityException,
-            tf2_ros.ExtrapolationException) as error:
+        point = tf_buffer.transform(point, "odom", rospy.Duration(0.1))
+        goal = point.point
+    except tf2_ros.TransformException:
         goal = None
-        rospy.logwarn_throttle(5.0, "Cannot transform scan to odom: %s", error)
-        return
-
-    goal = (point_odom.point.x, point_odom.point.y, message.header.stamp)
 
 
 def odom_callback(message):
-    global robot_pose, robot_velocity
-    position = message.pose.pose.position
-    q = message.pose.pose.orientation
-    _, _, yaw = euler_from_quaternion([q.x, q.y, q.z, q.w])
-    robot_pose = (position.x, position.y, yaw)
-    velocity = message.twist.twist
-    robot_velocity = (math.hypot(velocity.linear.x, velocity.linear.y),
-                      abs(velocity.angular.z))
+    global robot_odom
+    robot_odom = message
 
 
 def goto_closest(_):
-    global active_request
-    with request_lock:
-        if active_request is not None:
-            return TriggerResponse(success=False, message="Robot is already moving.")
-        request = {"done": threading.Event(), "response": None,
-                   "stopped_since": None}
-        active_request = request
+    global moving, response
+    if moving:
+        return TriggerResponse(success=False, message="Already moving.")
 
-    while not rospy.is_shutdown():
-        if request["done"].wait(0.1):
-            return request["response"]
-    return TriggerResponse(success=False, message="Node is shutting down.")
+    response = None
+    moving = True
+    while moving and not rospy.is_shutdown():
+        time.sleep(0.05)
+
+    moving = False
+    if response is None:
+        return TriggerResponse(success=False, message="Node is shutting down.")
+    return response
 
 
 def main():
-    global active_request
+    global moving, response
     rospy.init_node("auto_move")
     pub = rospy.Publisher("/cmd_vel", Twist, queue_size=1)
     tf_buffer = tf2_ros.Buffer()
     tf_listener = tf2_ros.TransformListener(tf_buffer)
-    rospy.Subscriber("/scan", LaserScan, scan_callback,
-                     callback_args=tf_buffer, queue_size=1)
+    rospy.Subscriber("/scan", LaserScan, scan_callback, callback_args=tf_buffer, queue_size=1)
     rospy.Subscriber("/odom", Odometry, odom_callback, queue_size=1)
     service = rospy.Service("/goto_closest", Trigger, goto_closest)
     rospy.on_shutdown(lambda: pub.publish(Twist()))
     rate = rospy.Rate(20)
 
     while not rospy.is_shutdown():
-        with request_lock:
-            command = Twist()
-            request = active_request
-            response = None
-            target = goal
-            pose = robot_pose
-            velocity = robot_velocity
-            now = rospy.Time.now()
+        command = Twist()
+        target = goal
+        odom = robot_odom
 
-            if request is not None:
-                if (target is None or pose is None or velocity is None
-                        or not 0.0 <= (now - target[2]).to_sec() <= SCAN_TIMEOUT):
-                    response = TriggerResponse(
-                        success=False, message="No valid scan, TF or odometry available.")
-                else:
-                    dx = target[0] - pose[0]
-                    dy = target[1] - pose[1]
-                    remaining = math.hypot(dx, dy) - STOP_DISTANCE
+        if moving:
+            if target is None or odom is None:
+                response = TriggerResponse(success=False, message="No scan, TF or odometry.")
+            else:
+                position = odom.pose.pose.position
+                q = odom.pose.pose.orientation
+                yaw = euler_from_quaternion([q.x, q.y, q.z, q.w])[2]
+                velocity = odom.twist.twist
+                dx = target.x - position.x
+                dy = target.y - position.y
+                remaining = math.hypot(dx, dy) - 0.3
 
-                    if remaining > GOAL_TOLERANCE:
-                        request["stopped_since"] = None
-                        angle_error = math.atan2(dy, dx) - pose[2]
-                        angle_error = math.atan2(math.sin(angle_error), math.cos(angle_error))
-                        command.angular.z = max(
-                            -MAX_ANGULAR_SPEED,
-                            min(MAX_ANGULAR_SPEED, K_ANGLE * angle_error),
-                        )
-                        if abs(angle_error) <= math.pi / 4:
-                            command.linear.x = min(MAX_LINEAR_SPEED, K_DISTANCE * remaining)
-                    elif velocity[0] < 0.01 and velocity[1] < 0.02:
-                        if request["stopped_since"] is None:
-                            request["stopped_since"] = now
-                        if (now - request["stopped_since"]).to_sec() >= STOP_SETTLE_TIME:
-                            response = TriggerResponse(
-                                success=True, message="Stopped about 0.3 m before the closest object.")
-                    else:
-                        request["stopped_since"] = None
+                if remaining > 0.02:
+                    angle = math.atan2(dy, dx) - yaw
+                    angle = math.atan2(math.sin(angle), math.cos(angle))
+                    command.angular.z = max(-0.5, min(0.5, angle))
+                    if abs(angle) <= math.pi / 4:
+                        command.linear.x = min(0.25, 0.5 * remaining)
+                elif (math.hypot(velocity.linear.x, velocity.linear.y) < 0.01
+                      and abs(velocity.angular.z) < 0.02):
+                    response = TriggerResponse(success=True, message="Stopped.")
 
-            pub.publish(command)
-            if response is not None:
-                active_request = None
-                request["response"] = response
-                request["done"].set()
+        pub.publish(command)
+        if moving and response is not None:
+            moving = False
         rate.sleep()
 
 
