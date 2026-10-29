@@ -1,0 +1,113 @@
+xacro: in-order processing became default in ROS Melodic. You can drop the option.
+[WARN] [1793269409.535224, 75.144000]: Congratulations 0, reached required score!!
+[WARN] [1793269409.535778, 75.146000]: Total time: 73 secs
+[WARN] [1793269409.536169, 75.146000]: 
+Game Over!!
+
+[INFO] [1793269336.293050, 2.000000]: Ball at 1.6 0.6
+current score [1, 0, 0, 0]
+[INFO] [1793269351.685994, 17.344000]: Ball at 2.2 -2.0
+current score [2, 0, 0, 0]
+[INFO] [1793269368.881410, 34.512000]: Ball at -0.7 -1.8
+current score [3, 0, 0, 0]
+[INFO] [1793269384.611524, 50.244000]: Ball at 1.1 -0.4
+current score [4, 0, 0, 0]
+[INFO] [1793269396.359271, 61.978000]: Ball at 1.1 -1.9
+current score [5, 0, 0, 0]
+[0m[INFO] [1793269332.350553005]: Finished loading Gazebo ROS API Plugin.[0m
+[0m[INFO] [1793269332.350915963]: waitForService: Service [/gazebo/set_physics_properties] has not been advertised, waiting...[0m
+[0m[INFO] [1793269332.615689172]: waitForService: Service [/gazebo/set_physics_properties] is now available.[0m
+[0m[INFO] [1793269332.827657672, 0.184000000]: Physics dynamic reconfigure ready.[0m
+[0m[INFO] [1793269334.626314881, 0.376000000]: Camera Plugin: Using the 'robotNamespace' param: '/robo0/'[0m
+[0m[INFO] [1793269334.628167131, 0.376000000]: Camera Plugin (ns = /robo0/)  <tf_prefix_>, set to ""[0m
+[0m[INFO] [1793269334.660580506, 0.376000000]: Starting plugin DiffDrive(ns = /robo0//)[0m
+[0m[INFO] [1793269334.660616173, 0.376000000]: DiffDrive(ns = /robo0//): <rosDebugLevel> = na[0m
+[0m[INFO] [1793269334.660870089, 0.376000000]: DiffDrive(ns = /robo0//): <tf_prefix> = [0m
+[0m[INFO] [1793269334.661239673, 0.376000000]: DiffDrive(ns = /robo0//): Advertise joint_states[0m
+[0m[INFO] [1793269334.661419839, 0.376000000]: DiffDrive(ns = /robo0//): Try to subscribe to cmd_vel[0m
+[0m[INFO] [1793269334.662049923, 0.376000000]: DiffDrive(ns = /robo0//): Subscribe to cmd_vel[0m
+[0m[INFO] [1793269334.662231756, 0.376000000]: DiffDrive(ns = /robo0//): Advertise odom on odom [0m
+[INFO] [1793269332.395453, 0.000000]: Waiting for the camera and /start_game...
+[INFO] [1793269336.841445, 2.550000]: Ball collection started (camera detection, odometry-guided search).
+[INFO] [1793269336.842453, 2.550000]: Ball collector: APPROACH
+[INFO] [1793269351.751374, 17.418000]: Ball collector: SEARCH
+[INFO] [1793269357.713718, 23.384000]: Ball collector: APPROACH
+[INFO] [1793269358.020005, 23.684000]: Ball collector: SEARCH
+[INFO] [1793269359.632350, 25.284000]: Ball collector: APPROACH
+[INFO] [1793269368.950633, 34.584000]: Ball collector: SEARCH
+[INFO] [1793269373.568268, 39.218000]: Ball collector: APPROACH
+[INFO] [1793269384.648829, 50.284000]: Ball collector: SEARCH
+[INFO] [1793269388.547190, 54.184000]: Ball collector: APPROACH
+[INFO] [1793269396.427684, 62.050000]: Ball collector: SEARCH
+[INFO] [1793269404.558030, 70.184000]: Ball collector: APPROACH
+[INFO] [1793269409.667864, 75.284000]: Ball collector: SEARCH
+[31mWARNING: disk usage in log directory [/root/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+[31m================================================================================REQUIRED process [logic-9] has died!
+process has finished cleanly
+log file: /root/.ros/log/c705b404-c882-11f1-b22c-ca2aea01b053/logic-9*.log
+Initiating shutdown!
+================================================================================[0m
+... logging to /root/.ros/log/c705b404-c882-11f1-b22c-ca2aea01b053/roslaunch-9007ab554f7d-14644.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;/catkin_ws/src/robot4_task_yamada/launch/game.launch
+[1mstarted roslaunch server http://9007ab554f7d:36047/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /gazebo/enable_ros_network: True
+ * /robo0/ball_collector/auto_start: True
+ * /robo0/ball_collector/max_angular_speed: 0.5
+ * /robo0/ball_collector/max_linear_speed: 0.25
+ * /robo0/ball_collector/steering_gain: 3.5
+ * /robo0/robot_description: <?xml version="1....
+ * /robo0/robot_state_publisher/publish_frequency: 50.0
+ * /robo0/robot_state_publisher/tf_prefix: robo0
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+ * /use_sim_time: True
+
+NODES
+  /
+    gazebo (gazebo_ros/gzserver)
+    logic (minigame/game_logic.py)
+    r0_odom_broadcaster (tf/static_transform_publisher)
+    r1_odom_broadcaster (tf/static_transform_publisher)
+    r2_odom_broadcaster (tf/static_transform_publisher)
+    r3_odom_broadcaster (tf/static_transform_publisher)
+    red_ball (gazebo_ros/spawn_model)
+  /robo0/
+    ball_collector (robot4_task_yamada/auto_move.py)
+    robot_state_publisher (robot_state_publisher/robot_state_publisher)
+    spawn_urdf (gazebo_ros/spawn_model)
+
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/catkin_ws/src/robot4_task_yamada/launch/game.launch http://localhost:11311
+[1mprocess[gazebo-1]: started with pid [14660][0m
+[1mprocess[robo0/robot_state_publisher-2]: started with pid [14662][0m
+[1mprocess[robo0/spawn_urdf-3]: started with pid [14665][0m
+[1mprocess[r0_odom_broadcaster-4]: started with pid [14667][0m
+[1mprocess[r1_odom_broadcaster-5]: started with pid [14668][0m
+[1mprocess[r2_odom_broadcaster-6]: started with pid [14673][0m
+[1mprocess[r3_odom_broadcaster-7]: started with pid [14674][0m
+[1mprocess[red_ball-8]: started with pid [14681][0m
+[1mprocess[logic-9]: started with pid [14695][0m
+[1mprocess[robo0/ball_collector-10]: started with pid [14699][0m
+[1m[red_ball-8] process has finished cleanly
+log file: /root/.ros/log/c705b404-c882-11f1-b22c-ca2aea01b053/red_ball-8*.log[0m
+[1m[robo0/spawn_urdf-3] process has finished cleanly
+log file: /root/.ros/log/c705b404-c882-11f1-b22c-ca2aea01b053/robo0-spawn_urdf-3*.log[0m
+[robo0/ball_collector-10] killing on exit
+[logic-9] killing on exit
+[r3_odom_broadcaster-7] killing on exit
+[r2_odom_broadcaster-6] killing on exit
+[r0_odom_broadcaster-4] killing on exit
+[r1_odom_broadcaster-5] killing on exit
+[gazebo-1] killing on exit
+[robo0/robot_state_publisher-2] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m

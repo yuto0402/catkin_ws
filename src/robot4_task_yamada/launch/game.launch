@@ -1,0 +1,12 @@
+<launch>
+  <arg name="gui" default="false" />
+  <arg name="auto_start" default="true" />
+  <include file="$(find minigame)/launch/game_single.launch">
+    <arg name="gui" value="$(arg gui)" />
+  </include>
+  <group ns="robo0">
+    <node name="ball_collector" pkg="robot4_task_yamada" type="auto_move.py" output="screen" required="true">
+      <param name="auto_start" value="$(arg auto_start)" />
+    </node>
+  </group>
+</launch>

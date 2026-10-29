@@ -1,0 +1,109 @@
+xacro: in-order processing became default in ROS Melodic. You can drop the option.
+[WARN] [1793269328.583416, 68.810000]: Congratulations 0, reached required score!!
+[WARN] [1793269328.583924, 68.810000]: Total time: 66 secs
+[WARN] [1793269328.584784, 68.810000]: 
+Game Over!!
+
+[INFO] [1793269261.645049, 2.000000]: Ball at -1.2 -0.0
+current score [1, 0, 0, 0]
+[INFO] [1793269281.876531, 22.212000]: Ball at -0.9 0.9
+current score [2, 0, 0, 0]
+[INFO] [1793269286.996525, 27.314000]: Ball at 1.9 -2.2
+current score [3, 0, 0, 0]
+[INFO] [1793269305.202659, 45.446000]: Ball at 0.2 -2.5
+current score [4, 0, 0, 0]
+[INFO] [1793269318.502836, 58.746000]: Ball at -2.3 -2.1
+current score [5, 0, 0, 0]
+[0m[INFO] [1793269257.654463179]: Finished loading Gazebo ROS API Plugin.[0m
+[0m[INFO] [1793269257.654908137]: waitForService: Service [/gazebo/set_physics_properties] has not been advertised, waiting...[0m
+[0m[INFO] [1793269257.964148221, 0.002000000]: waitForService: Service [/gazebo/set_physics_properties] is now available.[0m
+[0m[INFO] [1793269257.969962679, 0.008000000]: Physics dynamic reconfigure ready.[0m
+[0m[INFO] [1793269259.955497222, 0.376000000]: Camera Plugin: Using the 'robotNamespace' param: '/robo0/'[0m
+[0m[INFO] [1793269259.956695597, 0.376000000]: Camera Plugin (ns = /robo0/)  <tf_prefix_>, set to ""[0m
+[0m[INFO] [1793269260.008784680, 0.376000000]: Starting plugin DiffDrive(ns = /robo0//)[0m
+[0m[INFO] [1793269260.008819888, 0.376000000]: DiffDrive(ns = /robo0//): <rosDebugLevel> = na[0m
+[0m[INFO] [1793269260.009064430, 0.376000000]: DiffDrive(ns = /robo0//): <tf_prefix> = [0m
+[0m[INFO] [1793269260.009351263, 0.376000000]: DiffDrive(ns = /robo0//): Advertise joint_states[0m
+[0m[INFO] [1793269260.009566513, 0.376000000]: DiffDrive(ns = /robo0//): Try to subscribe to cmd_vel[0m
+[0m[INFO] [1793269260.010239055, 0.376000000]: DiffDrive(ns = /robo0//): Subscribe to cmd_vel[0m
+[0m[INFO] [1793269260.010387805, 0.376000000]: DiffDrive(ns = /robo0//): Advertise odom on odom [0m
+[INFO] [1793269257.617723, 0.000000]: Waiting for the camera and /start_game...
+[INFO] [1793269262.146126, 2.502000]: Ball collection started (camera detection, odometry-guided search).
+[INFO] [1793269262.147500, 2.502000]: Ball collector: APPROACH
+[INFO] [1793269281.897370, 22.236000]: Ball collector: SEARCH
+[INFO] [1793269283.459342, 23.802000]: Ball collector: APPROACH
+[INFO] [1793269287.015826, 27.336000]: Ball collector: SEARCH
+[INFO] [1793269289.735028, 30.070000]: Ball collector: APPROACH
+[INFO] [1793269305.256742, 45.502000]: Ball collector: SEARCH
+[INFO] [1793269312.747658, 53.002000]: Ball collector: APPROACH
+[INFO] [1793269328.701804, 68.936000]: Ball collector: SEARCH
+[31mWARNING: disk usage in log directory [/root/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+[31m================================================================================REQUIRED process [logic-9] has died!
+process has finished cleanly
+log file: /root/.ros/log/c705b404-c882-11f1-b22c-ca2aea01b053/logic-9*.log
+Initiating shutdown!
+================================================================================[0m
+... logging to /root/.ros/log/c705b404-c882-11f1-b22c-ca2aea01b053/roslaunch-9007ab554f7d-14351.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;/catkin_ws/src/robot4_task_yamada/launch/game.launch
+[1mstarted roslaunch server http://9007ab554f7d:34797/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /gazebo/enable_ros_network: True
+ * /robo0/ball_collector/auto_start: True
+ * /robo0/ball_collector/max_angular_speed: 0.5
+ * /robo0/ball_collector/max_linear_speed: 0.25
+ * /robo0/ball_collector/steering_gain: 3.5
+ * /robo0/robot_description: <?xml version="1....
+ * /robo0/robot_state_publisher/publish_frequency: 50.0
+ * /robo0/robot_state_publisher/tf_prefix: robo0
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+ * /use_sim_time: True
+
+NODES
+  /
+    gazebo (gazebo_ros/gzserver)
+    logic (minigame/game_logic.py)
+    r0_odom_broadcaster (tf/static_transform_publisher)
+    r1_odom_broadcaster (tf/static_transform_publisher)
+    r2_odom_broadcaster (tf/static_transform_publisher)
+    r3_odom_broadcaster (tf/static_transform_publisher)
+    red_ball (gazebo_ros/spawn_model)
+  /robo0/
+    ball_collector (robot4_task_yamada/auto_move.py)
+    robot_state_publisher (robot_state_publisher/robot_state_publisher)
+    spawn_urdf (gazebo_ros/spawn_model)
+
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/catkin_ws/src/robot4_task_yamada/launch/game.launch http://localhost:11311
+[1mprocess[gazebo-1]: started with pid [14367][0m
+[1mprocess[robo0/robot_state_publisher-2]: started with pid [14369][0m
+[1mprocess[robo0/spawn_urdf-3]: started with pid [14372][0m
+[1mprocess[r0_odom_broadcaster-4]: started with pid [14374][0m
+[1mprocess[r1_odom_broadcaster-5]: started with pid [14375][0m
+[1mprocess[r2_odom_broadcaster-6]: started with pid [14376][0m
+[1mprocess[r3_odom_broadcaster-7]: started with pid [14382][0m
+[1mprocess[red_ball-8]: started with pid [14391][0m
+[1mprocess[logic-9]: started with pid [14403][0m
+[1mprocess[robo0/ball_collector-10]: started with pid [14406][0m
+[1m[red_ball-8] process has finished cleanly
+log file: /root/.ros/log/c705b404-c882-11f1-b22c-ca2aea01b053/red_ball-8*.log[0m
+[1m[robo0/spawn_urdf-3] process has finished cleanly
+log file: /root/.ros/log/c705b404-c882-11f1-b22c-ca2aea01b053/robo0-spawn_urdf-3*.log[0m
+[robo0/ball_collector-10] killing on exit
+[logic-9] killing on exit
+[r3_odom_broadcaster-7] killing on exit
+[r2_odom_broadcaster-6] killing on exit
+[r1_odom_broadcaster-5] killing on exit
+[gazebo-1] killing on exit
+[robo0/robot_state_publisher-2] killing on exit
+[r0_odom_broadcaster-4] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
